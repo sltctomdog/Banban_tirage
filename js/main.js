@@ -1,9 +1,11 @@
 let fileName = null
-const valueToReduce = 10;
+const valueToReduce = 2;
+const maxValue = 10;
+let participantsGlobal = [];
 
 $(document).ready(function() {
     initEvents();
-    displayParticipants([]);
+    displayParticipants();
     displayWinners([]);
 });
 
@@ -19,7 +21,7 @@ function initEvents() {
 
                 updateClassFile(participants);
 
-                displayParticipants(participants);
+                displayParticipants();
             };
             reader.readAsText(file);
         }
@@ -32,18 +34,29 @@ function initEvents() {
     $('#reset').on('click', function() {
        resetPercentages();
     });
+
+    $('#info-stat').on('click', function () {
+        $(this).data('display', !$(this).data('display'));
+        displayParticipants($(this).data('display'));
+    })
 }
 
-function displayParticipants(participants) {
+function displayParticipants(withValue = false) {
+    const participants = participantsGlobal;
     const participantsUl = $('#participants');
     const participantsDiv = participantsUl.parents('.card');
     const resetButton = $('#reset');
 
     participantsUl.empty();
 
-    participants.forEach(name => {
-        participantsUl.append(`<li class="list-group-item list-group-item-primary">${name}</li>`);
-    });
+    for (const [_, participant] of Object.entries(participants)) {
+        let html = `<li class="list-group-item d-flex justify-content-between list-group-item-primary">${participant.name}`
+        if (withValue) {
+            html += `<span> ${participant.value * 100 / maxValue}%</span>`
+        }
+        html += `</li>`
+        participantsUl.append(html);
+    }
 
     participantsDiv.show();
     resetButton.show();
@@ -117,13 +130,15 @@ function updateWinnersStorage(winners) {
         }
     });
 
+    participantsGlobal = participants;
+    displayParticipants($('#info-stat').data('display'));
     localStorage.setItem(fileName, JSON.stringify(participantsData));
 }
 
 function updateClassFile(participants) {
     participants = participants.map(participant => ({
         name: participant.replace(/[\n\r]/g, ''),
-        value: 100
+        value: maxValue
     }));
 
     let banbanClassFile = localStorage.getItem(fileName);
@@ -140,6 +155,7 @@ function updateClassFile(participants) {
     }
 
     localStorage.setItem(fileName, JSON.stringify(banbanClassFile));
+    participantsGlobal = banbanClassFile.participants;
 }
 
 function resetPercentages() {
@@ -147,8 +163,10 @@ function resetPercentages() {
     let participants = participantsData.participants;
 
     participants.forEach(participant => {
-        participant.value = 100;
+        participant.value = maxValue;
     });
 
     localStorage.setItem(fileName, JSON.stringify(participantsData));
+    participantsGlobal = participants;
+    displayParticipants($('#info-stat').data('display'));
 }
