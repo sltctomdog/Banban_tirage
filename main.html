@@ -1,0 +1,71 @@
+<!--create basic doc import bootstrap-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tirage</title>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="mx-5">
+        <div class="row page-titles">
+            <div class="col-sm">
+                <h1>Tirage au sort</h1>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">
+                Choissisez un fichier
+            </div>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="file-input">
+                        <label class="custom-file-label">Choisir un fichier </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                Participants
+            </div>
+            <div class="card-body">
+                <ul class="list-group" id="participants">
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" id="sort-section">
+            <div class="card-title">
+                Nombre de gagnants
+            </div>
+            <div class="card-body">
+                <div class="row d-flex" style="gap:20px">
+                    <input type="number" class="form-control" value="3" style="width: unset" id="winner-number">
+                    <button class="btn btn-primary" id="draw">Tirer au sort</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                Gagnants
+            </div>
+            <div class="card-body">
+                <ul class="list-group" id="winners">
+                </ul>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-primary mb-2" id="reset">Réinitialiser</button>
+        </div>
+    </div>
+
+<script src="js/main.js"></script>
+<script src="js/custom.min.js"></script>
+</body>
+</html>
