@@ -1,71 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Tirage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sélection naturelle</title>
+    <link href="assets/css/lib/font-awesome.min.css" rel="stylesheet" type='text/css'>
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="assets/css/lib/font-awesome.min.css" rel="stylesheet"  type='text/css'>
+    <link href="css/custom.css" rel="stylesheet">
     <script src="js/jquery-3.7.1.min.js"></script>
 </head>
 <body>
-
-    <div class="mx-5">
-        <div class="row page-titles">
-            <div class="col-sm">
-                <h1>Tirage au sort</h1>
-            </div>
+<div class="row page-titles position-relative">
+    <img src="assets/images/logo.svg" alt="logo" class="svg-logo">
+    <h1 class="position-absolute centered-title">Sélection naturelle</h1>
+</div>
+<div class="mx-5">
+    <div class="card">
+        <div class="card-title">
+            Choisissez un fichier
         </div>
-        <div class="card">
-            <div class="card-title">
-                Choissisez un fichier
-            </div>
-            <div class="card-body">
-                <div class="input-group mb-3">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="file-input">
-                        <label class="custom-file-label">Choisir un fichier </label>
-                    </div>
+        <div class="card-body">
+            <div class="input-group mb-3">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="file-input">
+                    <label class="custom-file-label">Choisir un fichier</label>
                 </div>
             </div>
-        </div>
-
-        <div class="card">
-            <div class="card-title">
-                Participants
-                <i class="fa fa-info-circle" data-display="false" style="cursor: pointer" id="info-stat"></i>
-            </div>
-            <div class="card-body">
-                <ul class="list-group" id="participants">
-                </ul>
-            </div>
-        </div>
-
-        <div class="card" id="sort-section">
-            <div class="card-title">
-                Nombre de gagnants
-            </div>
-            <div class="card-body">
-                <div class="row d-flex" style="gap:20px">
-                    <input type="number" class="form-control" value="3" style="width: unset" id="winner-number">
-                    <button class="btn btn-primary" id="draw">Tirer au sort</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-title">
-                Gagnants
-            </div>
-            <div class="card-body">
-                <ul class="list-group" id="winners">
-                </ul>
-            </div>
-        </div>
-
-        <div class="d-flex justify-content-end">
-            <button class="btn btn-primary mb-2" id="reset">Réinitialiser</button>
         </div>
     </div>
+
+    <div class="card">
+        <div class="card-title">
+            Participants
+            <i class="fa fa-info-circle" data-display="false" style="cursor: pointer" id="info-stat"></i>
+        </div>
+        <div class="card-body">
+            <ul class="list-group" id="participants">
+            </ul>
+        </div>
+    </div>
+
+    <div class="card" id="sort-section">
+        <div class="card-title">
+            Nombre d'élèves tirés
+        </div>
+        <div class="card-body">
+            <div class="row d-flex" style="gap:20px">
+                <input type="number" class="form-control" value="3" style="width: unset" id="winner-number">
+                <button class="btn btn-primary" id="draw">Tirer au sort</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">
+            Élèves tirés
+        </div>
+        <div class="card-body">
+            <ul class="list-group" id="winners">
+            </ul>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-primary mb-2" id="reset">Réinitialiser</button>
+    </div>
+</div>
 
 <script src="js/main.js"></script>
 <script src="js/custom.min.js"></script>

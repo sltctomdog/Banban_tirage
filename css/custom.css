@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+body {
+    background-color: #e3f2fd;
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    color: #2e7d32;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1b5e20;
+    text-align: center;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    background-color: #81c784;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.custom-file-label {
+    background-color: #a5d6a7;
+    color: #1b5e20;
+    border: 1px solid #1b5e20;
+}
+
+.btn-primary {
+    background-color: #388e3c;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2e7d32;
+}
+
+#draw {
+    background-color: #43a047;
+}
+
+#draw:hover {
+    background-color: #388e3c;
+}
+
+#reset {
+    background-color: #d32f2f;
+}
+
+#reset:hover {
+    background-color: #c62828;
+}
+
+ul.list-group {
+    background-color: #c8e6c9;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #81c784;
+}
+
+ul.list-group li {
+    background-color: #ffffff;
+    color: #1b5e20;
+    border: 1px solid #81c784;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#info-stat {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.svg-logo {
+    padding: 0 20px;
+    width: 200px;
+    transition: width 300ms ease-in-out;
+}
+
+.page-titles {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.centered-title {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Shrikhand', cursive;
+    color: #0b0b0b;
+}
